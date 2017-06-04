@@ -1,46 +1,123 @@
 import React, { Component } from 'react';
-import Chart from 'chart.js';
-import { Bar, Line } from 'react-chartjs';
 import './home.css';
+import { Pie, Bar } from 'react-chartjs-2';
+import { Grid, Button, Header } from 'semantic-ui-react';
+
 
 class Home extends Component {
-    constructor(props) {
-        super(props);
-
-    }
     render() {
-        const chartData = {
+        const data = {
             labels: [
                 'Orange',
-                'Blue',
+                'Blue'
             ],
             datasets: [{
                 data: [300, 50],
                 backgroundColor: [
-                    '#FF6384',
-                    '#36A2EB',
-                    '#FFCE56'
+                    'rgba(255, 159, 64, 0.8)',
+                    'rgba(54, 162, 235, 0.8)'
                 ],
                 hoverBackgroundColor: [
-                    '#FF6384',
-                    '#36A2EB',
-                    '#FFCE56'
-                ],
-            },{
-                data: [200, 250]
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(54, 162, 235, 1)'
+                ]
             }]
         };
-        const options = {
-            responsive: true
+        const data2  = {
+            labels: [
+                'Orange',
+                'Blue',
+                'Belum Memilih'
+            ],
+            datasets: [{
+                data: [300, 250, 150],
+                backgroundColor: [
+                    'rgba(255, 159, 64, 0.8)',
+                    'rgba(54, 162, 235, 0.8)',
+                    'rgba(201, 203, 207, 0.8)'
+                ],
+                hoverBackgroundColor: [
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(201, 203, 207, 1)'
+                ],
+                label: 'Jumlah Suara Masuk'
+            }]
         }
-
+        const data3  = {
+            labels: [
+                'Orange',
+                'Blue'
+            ],
+            datasets: [{
+                data: [300, 250],
+                backgroundColor: [
+                    'rgba(255, 159, 64, 0.8)',
+                    'rgba(54, 162, 235, 0.8)'
+                ],
+                hoverBackgroundColor: [
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(54, 162, 235, 1)'
+                ],
+                label: 'Kelas A'
+            },{
+                data: [330, 280],
+                backgroundColor: [
+                    'rgba(255, 159, 64, 0.8)',
+                    'rgba(54, 162, 235, 0.8)'
+                ],
+                hoverBackgroundColor: [
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(54, 162, 235, 1)'
+                ],
+                label: 'Kelas B'
+            },{
+                data: [100, 133],
+                backgroundColor: [
+                    'rgba(255, 159, 64, 0.8)',
+                    'rgba(54, 162, 235, 0.8)'
+                ],
+                hoverBackgroundColor: [
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(54, 162, 235, 1)'
+                ],
+                label: 'Kelas C'
+            },{
+                data: [330, 260],
+                backgroundColor: [
+                    'rgba(255, 159, 64, 0.8)',
+                    'rgba(54, 162, 235, 0.8)'
+                ],
+                hoverBackgroundColor: [
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(54, 162, 235, 1)'
+                ],
+                label: 'Kelas D'
+            }]
+        }
+        
+        const options = {
+            responsive: !false
+        }
         return (
-            <div class="barCanvas">
-                <Bar
-                    data={chartData}
-                    options={options}
-                />
-            </div>
+            <div>
+                <Grid columns={2}>
+                    <Grid.Column>
+                        <Header as='h2'>Persentase Vote</Header>
+                        <Pie data={data} options={options}/>
+                    </Grid.Column>
+                    <Grid.Column>
+                        <Header as='h2'>Jumlah Suara Masuk</Header>
+                        <Bar data={data2} options={options}/>
+                    </Grid.Column>
+                </Grid>
+
+                <Grid columns={1}>
+                    <Grid.Column>
+                        <Bar data={data3} options={options}/>
+                    </Grid.Column>
+                </Grid>
+            </div>      
         );
     }
 }

@@ -3,13 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "chart.js": "^1.1.1",
-    "material-ui": "^0.18.1",
+    "chart.js": "^2.6.0",
     "react": "^15.5.4",
     "react-chartjs": "^0.8.0",
     "react-chartjs-2": "^2.1.0",
     "react-dom": "^15.5.4",
-    "react-tap-event-plugin": "^2.0.1"
+    "react-tap-event-plugin": "^2.0.1",
+    "semantic-ui": "^2.2.10",
+    "semantic-ui-css": "^2.2.10",
+    "semantic-ui-react": "^0.68.5"
   },
   "devDependencies": {
     "react-scripts": "1.0.7"
